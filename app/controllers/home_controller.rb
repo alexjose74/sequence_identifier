@@ -56,7 +56,7 @@ class HomeController < ApplicationController
         sequence_summary.sequence_details[:sequence_value].present?
     end
 
-    render(json: {no_data: true}, status: :bad_request) if post_body.empty?
+    return render(json: {no_data: true}, status: :bad_request) if post_body.empty?
 
     summary = {
       sequences: post_body
